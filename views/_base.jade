@@ -1,4 +1,5 @@
 // _base.jade
+//- Main layout, everything should extend this one.
 include _mixins
 
 doctype 5
@@ -7,17 +8,13 @@ html
     link(rel='stylesheet', type='text/css', href='/css/master.css')
     title
       block title
-        | MY SITE
+        = site_name
   body
-    // content start (base.jade)
     p Some Nav
     
     block content
       code CONTENT BLOCK
-    // content end (base.jade)
 
     footer
-      // footer start (base.jade)
       block footer
         code FOOTER BLOCK
-      // footer end (base.jade)

@@ -1,8 +1,11 @@
+// Template Helpers
+
 mixin job_item(job)
   li
     h3= job.title
       small= ' // ' + job.subtitle
     != job.content
+
 
 mixin news_item(news)
   li: a(href=news.url)= news.title
@@ -10,7 +13,7 @@ mixin news_item(news)
     +date_short(news.date)
     | )
 
-
+// Date Helpers
 
 mixin date_short(date)
-  !=moment(date).lang('de').format('Do MMMM YYYY')
+  !=momentjs(date).lang('de').format('Do MMMM YYYY')

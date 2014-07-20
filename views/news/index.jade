@@ -1,6 +1,10 @@
 //- this has to be a view, because if placed in news/index it
 //- wouldn't have access to all posts...
-extends ../_base
+extends _details
+
+block title
+  | News Index | 
+  = site_name
 
 block content
 

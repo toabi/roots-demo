@@ -1,7 +1,7 @@
 ---
 title: Second News
 date: 2014-07-23
-layout: '../../views/_news.jade'
+layout: ../../views/news/_details.jade
 ---
 
 The second news article!

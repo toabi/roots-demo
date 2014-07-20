@@ -2,7 +2,7 @@
 extends _base
 
 block prepend title
-  | Start |
+  | Start | 
 
 block content
   p This is the index view!
@@ -13,7 +13,6 @@ block content
 
   - sort(site.news['2014'], { by: 'date' })
   each news in site.news['2014']
-    //- there are fucking `null`s in the array. Skip them.
     +news_item(news)
 
   h2 Archived News
