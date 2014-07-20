@@ -1,0 +1,21 @@
+// _base.jade
+include _mixins
+
+doctype 5
+html
+  head
+    link(rel='stylesheet', type='text/css', href='/css/master.css')
+    title
+      block title
+        | MY SITE
+  body
+    // content start (base.jade)
+    block content
+      code CONTENT BLOCK
+    // content end (base.jade)
+
+    footer
+      // footer start (base.jade)
+      block footer
+        code FOOTER BLOCK
+      // footer end (base.jade)

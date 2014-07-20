@@ -1,0 +1,21 @@
+// index.jade
+extends _base
+
+block prepend title
+  | Start |
+
+block content
+  p This is the index view!
+  h2 News on this site:
+  each news in site.news
+    li: a(href=news.url)= news.title
+      |  (
+      +date_short(news.date)
+      | )
+
+  h2 Open Jobs
+  each job in site.jobs
+    +job_item(job)
+
+block footer
+  p Index footer!

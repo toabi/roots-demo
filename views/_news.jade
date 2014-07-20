@@ -1,0 +1,12 @@
+// news.jade
+extends _base
+
+block prepend title
+  != 'News: ' + post.title + ' | '
+
+block content
+  h2= post.title
+  != content
+
+block footer
+  p News footer!
