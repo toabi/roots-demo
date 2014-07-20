@@ -4,5 +4,13 @@ mixin job_item(job)
       small= ' // ' + job.subtitle
     != job.content
 
+mixin news_item(news)
+  li: a(href=news.url)= news.title
+    |  (
+    +date_short(news.date)
+    | )
+
+
+
 mixin date_short(date)
   !=moment(date).lang('de').format('Do MMMM YYYY')

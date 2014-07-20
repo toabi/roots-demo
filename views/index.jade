@@ -6,12 +6,18 @@ block prepend title
 
 block content
   p This is the index view!
+
   h2 News on this site:
-  each news in site.news
-    li: a(href=news.url)= news.title
-      |  (
-      +date_short(news.date)
-      | )
+  - sort(site.news['2014'], { by: 'date' })
+  each news in site.news['2014']
+    //- there are fucking `null`s in the array. Skip them.
+    if news
+      +news_item(news)
+
+  h2 Archived News
+  each news in site.news['2013']
+    if news
+      +news_item(news)
 
   h2 Open Jobs
   each job in site.jobs
