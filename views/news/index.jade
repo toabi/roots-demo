@@ -1,0 +1,15 @@
+//- this has to be a view, because if placed in news/index it
+//- wouldn't have access to all posts...
+extends ../_base
+
+block content
+
+  h2 All news!
+
+  each year in site.news
+    if year
+      each news in sort(year, {by: 'date'}).reverse()
+        li: a(href=news.url)= news.title
+          |  (
+          +date_short(news.date)
+          | )
